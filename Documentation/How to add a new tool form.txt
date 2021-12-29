@@ -1,0 +1,17 @@
+The form frmToolTemplate is intended to be a template for most or all of the "tool" windows in the application for the purpose of maintaining consistent behavior between forms throughout the application. 
+
+This form is not intended to be included in the project and it is not intended to be inherited due to complications surrounding dockable panel controls in inherited forms. Instead, you should make a copy of the form, give it a new name and then add controls and underlying code. 
+
+The form already includes the code to connect to pre-defined SQL servers and to disconnect the current connection in order to establish a new connection if desired. The code also creates the private sqlConnection and sqlCmd variables that can be used throughout the form. See the code in the btnConnect_Click event for more information and sample code.
+
+The form also includes a panel control named pnlPrimaryContent that is "fill" docked. This allows the panel to grow/shrink automatically as the window is resized. In addition, when a connection is established, the panel (and all of its contents) is automatically displayed. When a connection is disconnected, the panel (and all of its contents) is automatically hidden. For this reason it is recommended that you add all of your controls to pnlPrimaryContent.
+
+Steps to add a new form based on frmToolTemplate:
+1) In Windows Explorer, make copies of the frmToolTemplate.* files.
+2) Rename the file copies to the same names except for the file extension.
+3) In the project, ADD an existing item and select the new file with the .VB extension.
+4) In Solution Explorer, right click the new form and select View Code.
+5) In the code window, replace all instances of frmToolTemplate with the name of the new form (omit the .vb extension). MAKE SURE YOU SELECT "CURRENT DOCUMENT" WHEN PERFORMING THE REPLACE, NOT CURRENT PROJECT.
+6) In Solution Explorer, right click the new form and select View Designer.
+7) In the Properties window, change the Text property from Tool Template to whatever name you wish (will appear in title bar of window).
+8) Add new controls and further customize the form to your liking.

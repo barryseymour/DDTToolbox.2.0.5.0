@@ -1,0 +1,7 @@
+=====
+Interop install files are required on some workstations in order to run successfully using Click Once deployment. The MSI package is in the folder Office 2003 Primary Interop Assemblies at this location: \\Sq-csdis-d01\fdrive\Installs and Setups.
+=====
+Build an interactive Help document in HTML or PDF format that can then be linked to Help buttons in each of the tool windows.
+=====
+
+
