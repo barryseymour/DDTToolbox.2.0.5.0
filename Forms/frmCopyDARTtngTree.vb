@@ -28,6 +28,8 @@ Public Class frmCopyDARTtngTree
 
             For i = 0 To itemsToProcess
                 serverName = dgvServers.Rows(i).Cells("colServer").Value
+                If serverName Like "*001" Then serverName &= "corp.se.sempra.com"
+
                 If dgvServers.Rows(i).Cells("colCheckBox").Value = 1 Then
                     Dim connStr As String = "Data Source=" + serverName + ";Initial Catalog=DARTPro;Integrated Security=True;Connect Timeout=30"
                     Dim sqlConnection As New SqlConnection(connStr)

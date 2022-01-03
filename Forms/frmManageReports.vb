@@ -3,7 +3,8 @@ Public Class frmManageReports
     Private dsInfo As DataSet = Nothing
     Private dtReportNameTitle As DataTable = Nothing
     Private server As String = gServer
-    Private connStr As String = "Data Source=" + server + ";Initial Catalog=DDT_Common;Integrated Security=True"
+    '2021.12.29: Added ".corp.se.sempra.com" to server name to fully qualify it. Windows Authentication was not working without it. - Barry Seymour 310.721.7444
+    Private connStr As String = "Data Source=" + server + ".corp.se.sempra.com;Initial Catalog=DDT_Common;Integrated Security=True"
     Private Editing As Boolean = False
     Private Adding As Boolean
     Private HandlingControls As Boolean

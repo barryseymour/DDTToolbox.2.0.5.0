@@ -638,6 +638,7 @@ Public Class frmMain
         DART_TNGImportMonitorToolStripMenuItem.Click, DARTTNGApplicationToolStripMenuItem1.Click, QARTSettingsToolStripMenuItem.Click, _
         DARTTNGRetrieveReportParamsToolStripMenuItem.Click, DevelopersToolStripMenuItem.Click, OptionsToolStripMenuItem.Click, _
         ManageServerConnectionsToolStripMenuItem.Click, ApplicationUsersToolStripMenuItem.Click
+
         Dim NewMDIChild As New Form
 
         '04/03/2018 LAshby - added sender.tostring statements to some of these statements to accommodate the buttons, which have different names

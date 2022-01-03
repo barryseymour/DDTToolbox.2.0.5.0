@@ -3,6 +3,20 @@ Public Class frmConnections
     Const notEditing = 0
     Const editing = 1
     Const adding = 2
+    Private Sub frmConnections_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Dim i As Integer
+        For i = 0 To ServerList.GetUpperBound(0)
+            If ServerList(i) <> "" Then
+                listConnections.Items.Add(ServerList(i))
+            End If
+        Next
+        If listConnections.Items.Count > 0 Then
+            listConnections.SelectedItem = listConnections.Items(0)
+        End If
+        editMode = notEditing
+        HandleControls()
+    End Sub
+
 
     Private Sub btnClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnClose.Click
         Dim i As Integer
@@ -20,20 +34,6 @@ Public Class frmConnections
         If listConnections.Items.Count = 0 Then
             btnAdd_Click(sender, e)
         End If
-    End Sub
-
-    Private Sub frmConnections_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Dim i As Integer
-        For i = 0 To ServerList.GetUpperBound(0)
-            If ServerList(i) <> "" Then
-                listConnections.Items.Add(ServerList(i))
-            End If
-        Next
-        If listConnections.Items.Count > 0 Then
-            listConnections.SelectedItem = listConnections.Items(0)
-        End If
-        editMode = notEditing
-        HandleControls()
     End Sub
 
     Private Sub HandleControls()

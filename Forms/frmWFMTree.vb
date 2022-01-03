@@ -118,6 +118,7 @@ Public Class frmWFMTree
     Private Sub frmWFMTree_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Me.Icon = convert_BitmapToIcon(frmMain.imlToolbox.Images(11))
         server = gServer
+        If server Like "*001" Then server &= ".corp.se.sempra.com"
         connStr = "Data Source=" + server + ";Initial Catalog=DDT_Common;Integrated Security=True"
         sqlConnection = New System.Data.SqlClient.SqlConnection(connStr)
         Me.Tag = Me.Text

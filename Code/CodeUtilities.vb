@@ -301,7 +301,10 @@ Module CodeUtilities
     End Function
 
     Public Function CreateDataset(ByVal SqlStr As String, ByVal ConnectionStr As String, Optional ByVal TableName As String = "", Optional ByVal ExistingDataset As DataSet = Nothing) As DataSet
+
+
         Dim SqlDataAd As New System.Data.SqlClient.SqlDataAdapter(SqlStr, ConnectionStr)
+
         Dim dSet As New DataSet
         If TableName = Nothing Then
             SqlDataAd.Fill(dSet)

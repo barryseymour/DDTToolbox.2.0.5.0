@@ -119,9 +119,10 @@ Public Class frmDARTTngTree
 
 		Me.Icon = frmMain.Icon
 		Me.WindowState = FormWindowState.Maximized
-		server = gServer
-		connStr = "Data Source=" + server + ";Initial Catalog=DDT_Common;Integrated Security=True"
-		sqlConnection = New System.Data.SqlClient.SqlConnection(connStr)
+        server = gServer
+        If server Like "*001" Then server &= ".corp.se.sempra.com"
+        connStr = "Data Source=" + server + ";Initial Catalog=DDT_Common;Integrated Security=True"
+        sqlConnection = New System.Data.SqlClient.SqlConnection(connStr)
 		Me.Tag = Me.Text
 		Me.Text = Me.Tag + " [" + server + "]"
 		Me.Height = frmMain.Height - 100 - IIf(frmMain.tsMyButtons.Visible = True, frmMain.tsMyButtons.Height, 0)

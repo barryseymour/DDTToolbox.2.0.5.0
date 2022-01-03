@@ -628,6 +628,7 @@ Public Module modGeneral
         If gDatabaseConnection.State = ConnectionState.Open Then
             gDatabaseConnection.Close()
         End If
+        If server Like "*001" Then server &= ".corp.se.sempra.com"
         gConnectionString = "Data Source=" + server + ";Initial Catalog=DDT_Common;Integrated Security=True;Connect Timeout=30"
         gDatabaseConnection.ConnectionString = gConnectionString
 
